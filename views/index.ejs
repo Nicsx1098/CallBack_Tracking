@@ -1,0 +1,131 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container"> 
+  <div class="shadow"> 
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper" id="shadow">
+       <img src="">
+       <form action="/submit" method="post">
+
+        <div class="formbold-input-flex">
+          <div>
+            <label for="firstname" class="formbold-form-label"> Customer First Name </label>
+            <input
+              type="text"
+              name="fName"
+              id="fName"
+              placeholder="first name"
+              class="formbold-form-input"
+            />
+          </div>
+  
+          <div>
+            <label for="lastname" class="formbold-form-label"> Customer Last Name </label>
+            <input
+              type="text"
+              name="lName"
+              id="lName"
+              placeholder="last name"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+        <div class="formbold-input-flex">
+          <div>
+              <label for="email" class="formbold-form-label"> SR Number </label>
+              <input
+              type="number"
+              name="sNumber"
+              id="snumber"
+              placeholder="Transactiong Number"
+              class="formbold-form-input"
+              />
+          </div>
+  
+          <div>
+              <label class="formbold-form-label">Status</label>
+  
+              <select class="formbold-form-input" name="stat" id="stat">
+              <option value="Open">Open</option>
+              <option value="Close">Close</option>
+              <option value="Re-Call">Re-Call</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+
+          <div class="formbold-mb-3">
+            <label for="dob" class="formbold-form-label"> InterAction Date </label>
+            <input type="date" name="interDate" id="interDate" class="formbold-form-input" />
+          </div>
+  
+  
+          <div class="formbold-mb-3">
+          <label for="dob" class="formbold-form-label"> InterAction Time </label>
+          <input type="time" name="interTime" id="interTime" class="formbold-form-input" />
+        </div>
+
+        </div>
+
+       
+  
+        <div class="formbold-mb-3 formbold-input-wrapp">
+          <label for="phone" class="formbold-form-label"> Agent Handle The Call </label>
+          <div>
+            <input
+              type="text"
+              name="agent"
+              id="agent"
+              placeholder="Agent's Name"
+              class="formbold-form-input"
+            />
+          </div>
+        </div>
+  
+        
+        <div class="formbold-input-flex">
+
+          <div class="formbold-mb-3">
+            <label for="dob" class="formbold-form-label"> Preffered Callback Date </label>
+            <input type="date" name="prefferDate" id="prefferDate" class="formbold-form-input" />
+          </div>
+  
+  
+          <div class="formbold-mb-3">
+          <label for="dob" class="formbold-form-label"> Preffered Callback Time </label>
+          <input type="time" name="prefferTime" id="prefferTime" class="formbold-form-input" />
+        </div>
+
+        </div>
+
+  
+        <div class="formbold-mb-3">
+          <label for="message" class="formbold-form-label">
+           Note
+          </label>
+          <textarea
+            rows="6"
+            name="note"
+            id="note"
+            class="formbold-form-input"
+          ></textarea>
+        </div>
+  
+    
+            <button type="submit" class="formbold-btn">Send Ticket</button>
+          </form>
+        </div>
+      </div>
+   </div>
+</div>
+
+  <% if (message) { %>
+   
+    <script>
+      alert("<%= message %>");
+    </script>
+  <% } %>
+
+  <%- include("partials/footer.ejs") %>
